@@ -35,12 +35,16 @@ let playerDeck, computerDeck;
 
 function averageArray(array1) {
     playerTotal = array1.reduce((previousValue, currentValue) => {
-        return previousValue + currentValue
-    });  if (typeof array1 != [] ){
-        throw new Error('x must be a number');
-  };
-} 
+       return previousValue + currentValue
+    });  if (typeof array1 != []){
+        throw new Error ("array1 is not an array.");
+  }; 
+
+//error in commented statement above appaear and ruin code.
+
 return playerTotal;
+
+};
 
 
 //Splitting Deck
@@ -91,7 +95,8 @@ if (CARD_VALUE_MAP[playerCard.values] > CARD_VALUE_MAP[computerCard.values]){
 }
 // Score Board and Points(Game Conclusion)
 
-console.log(`     SCORE'S
+console.log(`    
+     Final Score
   Player: ${averageArray(playerPoints)}
   Computer: ${averageArray(computerPoints)}`);
 
@@ -100,11 +105,11 @@ let playerTotalSum = averageArray(playerPoints);
 let computerTotalSum = averageArray(computerPoints);
 
 if (playerTotalSum > computerTotalSum) {
-    console.log(`-Game Results-
-    Player Wins! with ${playerTotalSum} Points!`);
+    console.log(`Game Results
+    Player Wins! with a score of ${playerTotalSum}!`);
 } else if (playerTotalSum < computerTotalSum) {
-  console.log(`-Game Results-
-    Computer Wins! with ${computerTotalSum} Points!`)
+  console.log(`Game Results
+    Computer Wins! with a score of ${computerTotalSum}!`)
 }
  else if (playerTotalSum === computerTotalSum) {
  console.log("Tied Game")};
@@ -114,14 +119,14 @@ console.log (playerPoints);
 console.log (computerPoints);
 
 ///Test///
-function doSomething(x, y) {
-    if (typeof x != 'string'){
-        throw new error('x must be a string');
-  }
-    return x + y;
-}
+// function doSomething(x, y) {
+//     if (typeof x != 'string'){
+//         throw new error('x must be a string');
+//   }
+//     return x + y;
+// }
 
-///Test 2///
+
 
 
 
