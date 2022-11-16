@@ -19,8 +19,7 @@ describe ('MyFunctions', function() {
                 var array1 =  ([]);
                 expect([]).to.be.an('array');
             });
-
-
+            
             });
         });
 
