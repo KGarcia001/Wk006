@@ -36,15 +36,18 @@ let playerDeck, computerDeck;
 function averageArray(array1) {
     playerTotal = array1.reduce((previousValue, currentValue) => {
        return previousValue + currentValue
-    });if (typeof array1 == undefined){
-        throw new Error ("array1 is not functioning");
-    };
-    
-     // if (typeof array1 != []){
-       // throw new Error ("array1 is not an array.");
-  //}; 
+    })
+      if (typeof array1 != 'object'){
+        throw new Error ("array1 is not an array.");
+  }; 
 
 //error in commented statement above appaear and ruin code.
+
+
+//;if (typeof array1 == undefined){
+       // throw new Error ("array1 is undefined");
+    //};
+    //console.log ('typeof', typeof array1, array1);
 
 return playerTotal;
 
@@ -97,6 +100,7 @@ if (CARD_VALUE_MAP[playerCard.values] > CARD_VALUE_MAP[computerCard.values]){
     }
 
 }
+//add cards into player wins console log
 // Score Board and Points(Game Conclusion)
 
 console.log(`    
