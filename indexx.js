@@ -36,9 +36,13 @@ let playerDeck, computerDeck;
 function averageArray(array1) {
     playerTotal = array1.reduce((previousValue, currentValue) => {
        return previousValue + currentValue
-    });  if (typeof array1 != []){
-        throw new Error ("array1 is not an array.");
-  }; 
+    });if (typeof array1 == undefined){
+        throw new Error ("array1 is not functioning");
+    };
+    
+     // if (typeof array1 != []){
+       // throw new Error ("array1 is not an array.");
+  //}; 
 
 //error in commented statement above appaear and ruin code.
 
@@ -71,12 +75,12 @@ for (let i= 1; i <= 26; i++) {
     const computerCard = computerDeck.pop();
 
     console.log(
-        `Match ${i} Start! 
+        `Round ${i}, Fight! 
         Player: ${CARD_VALUE_MAP[playerCard.values]}`);
 
     console.log(
         `Computer: ${CARD_VALUE_MAP[computerCard.values]}
-         Round ${i} End Of Match!`);
+         Round ${i} Complete!`);
     
 
 
@@ -96,20 +100,19 @@ if (CARD_VALUE_MAP[playerCard.values] > CARD_VALUE_MAP[computerCard.values]){
 // Score Board and Points(Game Conclusion)
 
 console.log(`    
-     Final Score
-  Player: ${averageArray(playerPoints)}
-  Computer: ${averageArray(computerPoints)}`);
+     Final Scores
+     Player: ${averageArray(playerPoints)} Computer: ${averageArray(computerPoints)}`);
 
 
 let playerTotalSum = averageArray(playerPoints);
 let computerTotalSum = averageArray(computerPoints);
 
 if (playerTotalSum > computerTotalSum) {
-    console.log(`Game Results
-    Player Wins! with a score of ${playerTotalSum}!`);
+    console.log(`War Over:
+    Player Wins with a total of ${playerTotalSum}!`);
 } else if (playerTotalSum < computerTotalSum) {
-  console.log(`Game Results
-    Computer Wins! with a score of ${computerTotalSum}!`)
+  console.log( `War Over:
+    Computer Wins with a total of ${computerTotalSum}!`)
 }
  else if (playerTotalSum === computerTotalSum) {
  console.log("Tied Game")};
@@ -117,6 +120,7 @@ if (playerTotalSum > computerTotalSum) {
 
 console.log (playerPoints);
 console.log (computerPoints);
+
 
 ///Test///
 // function doSomething(x, y) {
